@@ -74,14 +74,16 @@ body * {
   border-radius: 50%;
 
   top: 50%;
+  left: 0;
   position: absolute;
   z-index: 1;
   transform: translatey(-50%);
+
+  animation: slide-back 0.2s;
 }
 
 .light #switch button {
-  right: 0;
-  left: initial;
+  animation: slide-in 0.2s forwards;
 }
 
 #switch span {
@@ -167,5 +169,24 @@ footer {
 
   .light{
     --bg-url: url(./assets/bg-desktop-light.jpg);
+  }
+}
+
+/*animação de botão*/
+@keyframes slide-in {
+  from{
+left: 0;
+  }
+  to{
+left: 50%;
+  }
+}
+
+@keyframes slide-back {
+  from{
+left: 50%;
+  }
+  to{
+left: 0;
   }
 }
